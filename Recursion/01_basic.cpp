@@ -2,15 +2,18 @@
 #include<string>
 using namespace std;
 
-void Nums(int n){
-    if(n==1){
-        cout<<"1\n";
+void Recursion(int n){
+    
+    if(n == 1){
+        cout<<"1";
         return;
-    };
-   cout<<n<<endl;
-   Nums(n-1);
+    }
+    cout<<n;
+    Recursion(n-1);
+    
 };
+
 int main(){
-    Nums(10);
-    return 0;
-};
+Recursion(9);
+return 0;
+}
