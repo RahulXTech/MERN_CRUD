@@ -12,7 +12,7 @@ unsigned int Fecto(int nums){
 };
 int main(){
     cout<<Fecto(6);
-
+    printf(Fecto(4));
     return 0;
 }
 
