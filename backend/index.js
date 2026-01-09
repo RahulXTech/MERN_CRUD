@@ -1,15 +1,18 @@
 const express = require("express");
-const databaseConnection = require("./database");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
-//database connection
-databaseConnection();
+dotenv.config();
+connectDB();
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 
-app.get("/", (req, res)=>{
-    res.send("Hello World");
+app.use("/api/books", require("./routes/bookRoutes"));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-app.listen(8000, ()=>{
-    console.log("Port is listening on 8000");
-})
