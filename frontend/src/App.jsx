@@ -11,7 +11,7 @@ function App() {
 
   const fetchBooks = async () => {
     const res = await axios.get(`${BASE_URL}/api/books`);
-    setBooks(res.data);
+    setBooks(res.data.data);
   };
 
   useEffect(() => {
