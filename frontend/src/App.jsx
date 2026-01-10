@@ -3,13 +3,14 @@ import Navbar from "./components/Navbar";
 import BookForm from "./components/BookForm";
 import BookTable from "./components/BookTable";
 import axios from "axios";
+import { BASE_URL } from "./config";
 
 function App() {
   const [books, setBooks] = useState([]);
   const [editingBook, setEditingBook] = useState(null);
 
   const fetchBooks = async () => {
-    const res = await axios.get("http://localhost:5000/api/books");
+    const res = await axios.get(`${BASE_URL}/api/books`);
     setBooks(res.data);
   };
 
