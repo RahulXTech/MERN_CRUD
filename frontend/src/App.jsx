@@ -13,6 +13,9 @@ function App() {
     const res = await axios.get(`${BASE_URL}/api/books`);
     setBooks(res.data.data);
   };
+  useEffect(() => {
+  console.log("BOOKS STATE UPDATED:", books);
+}, [books]);
 
   useEffect(() => {
     fetchBooks();
