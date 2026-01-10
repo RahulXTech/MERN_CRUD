@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { BASE_URL } from "../config";
 function BookForm({ fetchBooks, editingBook, setEditingBook }) {
   const [formData, setFormData] = useState({
     bookName: "",
@@ -31,7 +31,7 @@ function BookForm({ fetchBooks, editingBook, setEditingBook }) {
 
     if (editingBook) {
       await fetch(
-        `http://localhost:5000/api/books/${editingBook._id}`,
+        `${BASE_URL}/api/books/${editingBook._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -40,7 +40,7 @@ function BookForm({ fetchBooks, editingBook, setEditingBook }) {
       );
       setEditingBook(null);
     } else {
-      await fetch("http://localhost:5000/api/books", {
+      await fetch( `${BASE_URL}/api/books`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

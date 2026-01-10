@@ -1,6 +1,7 @@
+import { BASE_URL } from "../config";
 function BookTable({ books, fetchBooks, setEditingBook }) {
   const deleteBook = async (id) => {
-    await fetch(`http://localhost:5000/api/books/${id}`, {
+    await fetch(`${BASE_URL}/api/books/${id}`, {
       method: "DELETE",
     });
     fetchBooks();
@@ -92,5 +93,4 @@ function BookTable({ books, fetchBooks, setEditingBook }) {
     </div>
   );
 }
-
 export default BookTable;
