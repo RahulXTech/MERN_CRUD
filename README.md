@@ -18,10 +18,10 @@ This project demonstrates real-world **frontend–backend integration**, **state
 ## 🖼️ Application Screenshots
 
 ### 📌 Book Manager UI
-![Book Manager UI](./assets/frontend-ui.png)
+![Book Manager UI](./assets/Frontend_UI.jpg)
 
 ### 📌 MongoDB Atlas – Stored Book Data
-![MongoDB Atlas Data](./assets/mongodb-data.png)
+![MongoDB Atlas Data](./assets/MongoDB_DataImage.jpg)
 
 ---
 
