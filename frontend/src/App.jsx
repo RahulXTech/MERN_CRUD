@@ -11,11 +11,12 @@ function App() {
 
   const fetchBooks = async () => {
     const res = await axios.get(`${BASE_URL}/api/books`);
-    setBooks(res.data.data);
+    setBooks(res.data); // ✅ FIXED
   };
+
   useEffect(() => {
-  console.log("BOOKS STATE UPDATED:", books);
-}, [books]);
+    console.log("BOOKS STATE UPDATED:", books);
+  }, [books]);
 
   useEffect(() => {
     fetchBooks();
